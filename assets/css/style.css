@@ -1,0 +1,538 @@
+/*
+ * style.css — все стили темы Keiser.
+ *
+ * Структура файла:
+ *   1. Сброс и CSS-переменные (цвета, радиусы)
+ *   2. Базовые стили (html, body, container)
+ *   3. Секции: шапка, переключатель языка, Hero, Программы,
+ *      «Почему мы», «О нас», CTA, видео, подвал
+ *   4. Адаптивность (@media) и кнопки
+ */
+
+/* Сброс стандартных отступов браузера */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS-переменные: цвета и настройки темы */
+:root {
+  --primary: #003366;
+  --primary-dark: #002244;
+  --accent: #ff6600;
+  --accent-dark: #e55a00;
+  --white: #ffffff;
+  --gray-light: #f5f7fa;
+  --gray: #6b7280;
+  --gray-dark: #374151;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+}
+
+/* Базовые стили страницы (шрифты, фон, контейнер) */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--gray-dark);
+  background: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1 0 auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Шапка сайта (фиксированная, поверх контента) */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+}
+
+.logo__icon {
+  width: 45px;
+  height: 45px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.logo__img {
+  height: 80px;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+.logo__text {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+/* Кнопка переключения языка EN/RU */
+.lang-toggle {
+  background: transparent;
+  border: 2px solid var(--primary);
+  border-radius: 30px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.lang-toggle__divider {
+  margin: 0 4px;
+  opacity: 0.5;
+}
+
+.lang-toggle__other {
+  opacity: 0.5;
+}
+
+/* Секция Hero: главный экран */
+.hero {
+  padding: 150px 0 100px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero__subtitle {
+  font-size: 20px;
+  opacity: 0.9;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Заголовок секции (общий для всех блоков) */
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--primary);
+}
+
+.section-title--light {
+  color: var(--white);
+}
+
+/* Секция Программы */
+.programs {
+  padding: 100px 0;
+  background: var(--gray-light);
+}
+
+.programs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.program-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+.program-card__icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.program-card__img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.program-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.program-card__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.program-card__text {
+  color: var(--gray);
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+/* Секция «Почему мы» */
+.why-us {
+  padding: 100px 0;
+  background: var(--primary);
+  text-align: center;
+}
+
+.why-us__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.why-us__item {
+  color: var(--white);
+}
+
+.why-us__number {
+  width: 60px;
+  height: 60px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 auto 20px;
+}
+
+.why-us__item-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.why-us__item-text {
+  opacity: 0.85;
+  font-size: 15px;
+}
+
+/* Секция «О нас» */
+.about {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about__images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.about__img {
+  width: 200px;
+  height: 200px;
+  background: var(--gray-light);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.about__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__img:first-child {
+  margin: 0 auto;
+}
+
+.about__content {
+  text-align: left;
+}
+
+.about__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.about__text {
+  margin-bottom: 15px;
+}
+
+.about__text p {
+  color: var(--gray);
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+/* Финальная CTA-секция */
+.cta-section {
+  padding: 100px 0;
+  background: var(--gray-light);
+  text-align: center;
+}
+
+.cta-section__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.cta-section__text {
+  font-size: 18px;
+  color: var(--gray);
+  margin-bottom: 40px;
+}
+
+/* Средняя CTA-кнопка (между «О нас» и видео) */
+.cta-button-section {
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Секция Видео (широкий контейнер, iframe 16:9) */
+.video-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.video-section__container {
+  max-width: 1400px;
+}
+
+.video-section__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 40px;
+}
+
+.video-section__embed {
+  margin: 0 auto;
+}
+
+.video-section__ratio {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-section__ratio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Подвал сайта */
+.footer {
+  padding: 30px 0;
+  background: var(--primary-dark);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.footer__text {
+  color: var(--white);
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* Кнопки (общие стили) */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn--outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn--white {
+  background: var(--white);
+  color: var(--primary);
+}
+
+.btn--white:hover {
+  background: var(--gray-light);
+  transform: translateY(-2px);
+}
+
+.btn--large {
+  padding: 18px 48px;
+  font-size: 18px;
+}
+
+/* Адаптивность: планшеты и мобильные */
+@media (max-width: 992px) {
+  .programs__grid,
+  .why-us__grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .why-us__grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 120px 0 80px;
+  }
+
+  .hero__title {
+    font-size: 32px;
+  }
+
+  .hero__subtitle {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .programs,
+  .why-us,
+  .cta-section,
+  .about {
+    padding: 70px 0;
+  }
+
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about__images {
+    order: -1;
+  }
+
+  .about__img {
+    width: 100%;
+    height: 100%;
+    font-size: 32px;
+  }
+
+  .logo__text {
+    font-size: 14px;
+    line-height: 120%;
+  }
+
+  .video-section {
+    padding: 60px 0;
+  }
+
+  .video-section__title {
+    font-size: 28px;
+  }
+
+  .lang-toggle {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+}
