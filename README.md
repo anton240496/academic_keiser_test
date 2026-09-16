@@ -38,6 +38,7 @@ Backend реализован **внутри той же WordPress-темы** (ф
 - `keiser/backend.php` — backend-логика (см. п. 8);
 - `keiser/function_carbon.php` — поля админки (Carbon Fields), вкладки: Логотип, Hero, Программы, Почему мы, О нас, Видео, CTA, Footer;
 - `keiser/header.php`, `home.php`, `footer.php`, `index.php` — шаблоны;
+- `style.css - файлы wp для названия темы
 - `keiser/assets/css/style.css`, `keiser/assets/js/keiser.js` — стили и скрипты;
 - `keiser/anton2de_wp_1.sql` — дамп базы данных (phpMyAdmin, MySQL, база `anton2de_wp_1`).
 -изображения можно посмотреть в wp в папке anton2de.beget.tech/public_html/wp-content/uploads/2026/09/
