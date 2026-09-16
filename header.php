@@ -13,7 +13,7 @@
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','G-CST0KYB7YV');</script>
+  })(window,document,'script','dataLayer','GT-WFMMHQRM');</script>
   <!-- Конец Google Tag Manager -->
   <!-- Google Analytics (GA4): gtag.js + конфигурация контейнера -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CST0KYB7YV"></script>
@@ -101,7 +101,7 @@
 <body <?php body_class(); ?>>
   <!-- Google Tag Manager (noscript): резервный счётчик для посетителей
        с отключённым JavaScript; ID должен совпадать со скриптом выше -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-CST0KYB7YV"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-WFMMHQRM"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Конец Google Tag Manager (noscript) -->
 
