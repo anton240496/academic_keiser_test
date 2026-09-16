@@ -1,0 +1,14 @@
+/*
+Theme Name: Keiser University
+Author: ANTON ILINSKIY
+Description: Landing page for Keiser University
+Version: 1.0
+Text Domain: keiser
+*/
+
+/*
+ * Стили темы подключаются из assets/css/style.css
+ * через wp_enqueue_style() в functions.php.
+ * Этот файл нужен WordPress для распознавания темы
+ * (шапка выше) и может оставаться пустым.
+ */
